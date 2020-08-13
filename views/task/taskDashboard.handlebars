@@ -1,0 +1,18 @@
+                    <div class="top-area">
+                        <h2>My Tasks</h2>    
+                        <form action="/task/add" method="GET">
+                            <input type="submit" value="Add Task" id="addButton" class="btn">
+                        </form>
+                    </div>
+                    <div id="task-list-bottom-area">
+                        <div class="error-message-main">{{message}}</div>
+                        {{#each tasks}}
+                            <div class="task-items">
+                                <h3>{{this.title}}</h3>
+                                <div class="buttons-container">
+                                    <a href="/task/edit/{{this.id}}" class="btn">Edit</a>
+                                    <a href="/task/delete/{{this.id}}?method=delete" class="btn">Remove</a>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
